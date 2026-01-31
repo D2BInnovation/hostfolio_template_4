@@ -4,8 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'John Doe | Full Stack Developer',
-  description: 'Passionate full-stack developer with 5+ years of experience building scalable web applications.',
+  title: 'My Portfolio',
+  description: 'My Portfolio',
   generator: 'HostFolio',
   icons: {
     icon: [
