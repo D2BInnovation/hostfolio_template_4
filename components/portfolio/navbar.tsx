@@ -27,8 +27,8 @@ export function Navbar({ data }: { data?: any }) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-background/20"
-          : "bg-transparent"
+        ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-background/20"
+        : "bg-transparent"
         }`}
     >
       <nav className="container mx-auto px-6 py-4">
@@ -55,14 +55,14 @@ export function Navbar({ data }: { data?: any }) {
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-            {data?.personal?.resume && (
+            {(data?.resume || data?.personal?.resume) && (
               <Button
                 asChild
                 size="sm"
                 className="ml-4 opacity-0 animate-fade-in-down hover:scale-105 transition-transform"
                 style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}
               >
-                <a href={data.personal.resume} target="_blank" rel="noopener noreferrer">
+                <a href={data.resume || data.personal.resume} target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </Button>
@@ -110,9 +110,9 @@ export function Navbar({ data }: { data?: any }) {
                   {link.label}
                 </Link>
               ))}
-              {data?.personal?.resume && (
+              {(data?.resume || data?.personal?.resume) && (
                 <Button asChild size="sm" className="w-fit mt-2 ml-4">
-                  <a href={data.personal.resume} target="_blank" rel="noopener noreferrer">
+                  <a href={data.resume || data.personal.resume} target="_blank" rel="noopener noreferrer">
                     Resume
                   </a>
                 </Button>
